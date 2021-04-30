@@ -1,0 +1,9 @@
+name: "the-oct"
+displayName: "The Oct"
+author: MrDuck557
+description: "Adds every unit weapon to oct"
+version: "Oct"
+minGameVersion: "126.2"
+dependencies: []
+hidden: false
+repo: MrDuck557/The-Oct
