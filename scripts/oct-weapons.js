@@ -1,12 +1,16 @@
 //Seq for all unit weapons
-allWeapons = new Seq();
+var allWeapons = new Seq();
 
 //Read and store all unit weapons
 Vars.content.units().each(e => {
-  allWeapons.addAll(e.weapons);
+  if (e != UnitTypes.crawler){
+    allWeapons.addAll(e.weapons);
+  }
 });
 
-//Write all weapons to Oct
-UnitTypes.oct.weapons = allWeapons
-
+//Do stuff to oct
+UnitTypes.oct.weapons = allWeapons;
+UnitTypes.oct.rotateShooting = true;
+UnitTypes.oct.immunities = ObjectSet.with(StatusEffects.slow, StatusEffects.unmoving);
+UnitTypes.oct.defaultController = () => new FlyingAI();
 //Have fun!
